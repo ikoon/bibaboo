@@ -123,7 +123,7 @@ $(document).ready(function() {
 		options: {
             responsive: true,
             maintainAspectRatio: false,
-            cutoutPercentage: 80,
+            cutoutPercentage: 78,
 			elements: {
 				arc: {
 					roundedCornersFor: 0
