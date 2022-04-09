@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>비바부 잉글리시</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/common.css" />
+</head>
+<body>
+<div class="wrap">
+    <!-- HEADER -->
+    <header class="header">
+        <h1 class="logo"><span class="blind">비바부 잉글리시</span></h1>
+        <div class="p-info">
+            <p class="txt"><span class="font-19">김잉헌</span> 회원</p>
+            <p class="txt"><span class="font-19">11월 2주 </span>주간 리포트가 도착했습니다.</p>
+        </div>
+        <ul class="badge-list">
+            <li><div class="badge badge-violet"><span>Phonics 학습중</span></div></li>
+            <li><div class="badge badge-yellow"><span>Alphabet 학습중</span></div></li>
+            <li><div class="badge badge-sky"><span>Readers 학습중</span></div></li>
+        </ul>
+    </header>
+    <!--// HEADER -->
+
+    <!-- CONTENTS -->
+    <div class="body-container">
+        <div class="date">2021.11.08 ~ 2021.11.14</div>
+
+        <section>
+            <div class="sect-title">주간 달성률</div>
+            <div class="weekly-box-wide">
+                <div class="chart-doughnut">
+                    <!-- chart -->
+                    <canvas id="doughnutChart" width="200"></canvas>
+                </div>
+                <div class="chart-line-box">
+                    <ul class="ps-num">
+                        <li>100%</li>
+                        <li>100%</li>
+                        <li>100%</li>
+                        <li>100%</li>
+                    </ul>
+                    <div class="chart-line">
+                        <!-- chart -->
+                        <canvas id="lineChart" width="90%" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sect-title">이번주 학습 요약</div>
+            <ul class="summary-list">
+                <li>
+                    <div class="tit">출석률</div>
+                    <div class="cnt">100%</div>
+                </li>
+                <li>
+                    <div class="tit">학습유닛</div>
+                    <div class="cnt">10유닛</div>
+                </li>
+                <li>
+                    <div class="tit">학습횟수</div>
+                    <div class="cnt">4회</div>
+                </li>
+            </ul>
+            <ul class="summary-list col2">
+                <li>
+                    <div class="tit">자유모드</div>
+                    <div class="cnt">10회</div>
+                </li>
+                <li>
+                    <div class="tit">학습시간</div>
+                    <div class="cnt">100분</div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="sect-title">코너별 완료 현황</div>
+
+            <div class="accordion-contianer">
+                <!-- roof 1 -->
+                <div class="accordion-item">
+                    <div class="accordion">
+                        <div class="acod-top">
+                            <span class="label violet">파닉스</span> <!-- 컬러종류 class : violet, yellow, sky -->
+                            <span class="tit">Phonics Time</span>
+                        </div>
+                        <!-- progress -->
+                        <ul class="progress-box">
+                            <li class="progress-item">
+                                <span class="progress-txt">완료율</span>
+                                <span class="progress-bar"><span class="progress" style="width:94%"></span></span>
+                                <span class="progress-gpa">94%</span>
+                            </li>
+                        </ul>
+                        <!--// progress -->
+                        <button class="btn-arrow"></button>
+                    </div>
+                    
+                    <div class="panel"> 
+                        <ul class="progress-box">
+                            <li class="progress-item">
+                                <span class="progress-txt">Unit 140</span>
+                                <span class="progress-bar"><span class="progress" style="width:100%"></span></span>
+                                <span class="progress-gpa">100%</span>
+                            </li>
+                            <li class="progress-item">
+                                <span class="progress-txt">Unit 140</span>
+                                <span class="progress-bar"><span class="progress" style="width:70%"></span></span>
+                                <span class="progress-gpa">70%</span>
+                            </li>
+                            <li class="progress-item">
+                                <span class="progress-txt">Unit 140</span>
+                                <span class="progress-bar"><span class="progress" style="width:50%"></span></span>
+                                <span class="progress-gpa">50%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--// roof 1 -->
+
+                <!-- roof 2 -->
+                <div class="accordion-item">
+                    <div class="accordion">
+                        <div class="acod-top">
+                            <span class="label sky">리더스</span> <!-- 컬러종류 class : violet, yellow, sky -->
+                            <span class="tit">Chant</span>
+                        </div>
+                        <!-- progress -->
+                        <ul class="progress-box">
+                            <li class="progress-item">
+                                <span class="progress-txt">완료율</span>
+                                <span class="progress-bar"><span class="progress" style="width:94%"></span></span>
+                                <span class="progress-gpa">94%</span>
+                            </li>
+                        </ul>
+                        <!--// progress -->
+                        <button class="btn-arrow"></button>
+                    </div>
+                    
+                    <div class="panel"> 
+                        <ul class="progress-box">
+                            <li class="progress-item">
+                                <span class="progress-txt">Unit 140</span>
+                                <span class="progress-bar"><span class="progress" style="width:100%"></span></span>
+                                <span class="progress-gpa">100%</span>
+                            </li>
+                            <li class="progress-item">
+                                <span class="progress-txt">Unit 140</span>
+                                <span class="progress-bar"><span class="progress" style="width:100%"></span></span>
+                                <span class="progress-gpa">100%</span>
+                            </li>
+                            <li class="progress-item">
+                                <span class="progress-txt">Unit 140</span>
+                                <span class="progress-bar"><span class="progress" style="width:100%"></span></span>
+                                <span class="progress-gpa">100%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--// roof 2 -->
+
+                <!-- roof 3 -->
+                <div class="accordion-item">
+                    <div class="accordion">
+                        <div class="acod-top">
+                            <span class="label yellow">알파벳</span> <!-- 컬러종류 class : violet, yellow, sky -->
+                            <span class="tit">TEST</span>
+                        </div>
+                        <!-- progress -->
+                        <ul class="progress-box">
+                            <li class="progress-item">
+                                <span class="progress-txt">완료율</span>
+                                <span class="progress-bar"><span class="progress" style="width:90%"></span></span>
+                                <span class="progress-gpa">90%</span>
+                            </li>
+                        </ul>
+                        <!--// progress -->
+                        <button class="btn-arrow"></button>
+                    </div>
+                    
+                    <div class="panel"> 
+                        <ul class="progress-box">
+                            <li class="progress-item">
+                                <span class="progress-txt">정답수</span>
+                                <span class="progress-bar"><span class="progress" style="width:90%"></span></span>
+                                <span class="progress-gpa">25/30</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--// roof 3 -->
+            </div>
+        </section>
+
+        <section>
+            <div class="sect-title">발음평가 종합 그래프</div>
+            <div class="chart-radar">
+                <canvas id="radarChart" height="240"></canvas>
+            </div>
+            <div class="index-box">
+                <div class="txt"><span>네이티브 지수</span></div>
+                <span class="ave"><strong>4.6</strong> / 5</span>
+            </div>
+            <div class="comt">
+                김잉헌 학생은 매일 2.3시간의 학습을 꾸준히 하고 있습니다. 앞으로도 지금처럼 할수 있도록 응원해 주세요.
+            </div>
+        </section>
+
+        <section>
+            <div class="sect-title">평균 집중도 그래프</div>
+            <div class="round-box-wide">
+                <div class="box-top">
+                    <div class="con-tit">Phonics Time</div>
+                    <ul class="badge-list">
+                        <li><div class="badge badge-blue"><span>Unit 140</span></div></li> <!-- 컬러 class : badge-blue, badge-gray -->
+                        <li><div class="badge badge-gray"><span>Unit 14</span></div></li>
+                        <li><div class="badge badge-gray"><span>Unit 140</span></div></li>
+                    </ul> 
+                </div>
+                <div class="per-box">
+                    <span class="per">100%</span>
+                    <span class="txt">시간가는줄 모르게 재미있었어요.</span>
+                </div>
+
+                <!-- chart -->
+                <div class="chart-line-full">
+                    <canvas id="lineFullChart"></canvas>
+                </div>
+            </div>
+
+            <div class="round-box-wide">
+                <div class="box-top">
+                    <div class="con-tit">Phonics Time</div>
+                    <ul class="badge-list">
+                        <li><div class="badge badge-blue"><span>Unit 140</span></div></li> <!-- 컬러 class : badge-blue, badge-gray -->
+                        <li><div class="badge badge-gray"><span>Unit 14</span></div></li>
+                        <li><div class="badge badge-gray"><span>Unit 140</span></div></li>
+                    </ul> 
+                </div>
+                <div class="per-box">
+                    <span class="per">100%</span>
+                    <span class="txt">시간가는줄 모르게 재미있었어요.</span>
+                </div>
+            </div>
+
+            <div class="round-box-wide">
+                <div class="box-top">
+                    <div class="con-tit">Phonics Time</div>
+                    <ul class="badge-list">
+                        <li><div class="badge badge-blue"><span>Unit 140</span></div></li> <!-- 컬러 class : badge-blue, badge-gray -->
+                        <li><div class="badge badge-gray"><span>Unit 14</span></div></li>
+                        <li><div class="badge badge-gray"><span>Unit 140</span></div></li>
+                    </ul> 
+                </div>
+                <div class="per-box">
+                    <span class="per">100%</span>
+                    <span class="txt">시간가는줄 모르게 재미있었어요.</span>
+                </div>
+                <div class="chart-line-full">
+                    <canvas id="lineFullChart2"></canvas>
+                </div>
+            </div>
+
+            <div class="round-box-wide">
+                <div class="box-top">
+                    <div class="con-tit">Phonics Time</div>
+                    <ul class="badge-list">
+                        <li><div class="badge badge-blue"><span>Unit 140</span></div></li> <!-- 컬러 class : badge-blue, badge-gray -->
+                        <li><div class="badge badge-gray"><span>Unit 14</span></div></li>
+                        <li><div class="badge badge-gray"><span>Unit 140</span></div></li>
+                    </ul> 
+                </div>
+                <div class="per-box">
+                    <span class="per">100%</span>
+                    <span class="txt">시간가는줄 모르게 재미있었어요.</span>
+                </div>
+                <div class="chart-line-full">
+                    <canvas id="lineFullChart3"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="study-box">
+                <ul>
+                    <li>
+                        <div class="study-bg">
+                            <div class="txt">읽은 책</div>
+                            <div class="num">14</div>
+                            <div class="icon-num">6<i class="icon-arrowup"></i></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="study-bg">
+                            <div class="txt">동영상</div>
+                            <div class="num">27</div>
+                            <div class="icon-num">8<i class="icon-arrowup"></i></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="study-bg">
+                            <div class="txt">배운 단어</div>
+                            <div class="num">25</div>
+                            <div class="icon-num">6<i class="icon-arrowup"></i></div>
+                        </div>
+                        <!-- 단어 리스트-->
+                        <div class="express-panel">
+                            <p>apple</p>
+                            <p>banana</p>
+                            <p>fruit</p>
+                            <p>hungry</p>
+                            <p>full</p>
+                            <p>thirsty</p>
+                            <p>apple</p>
+                            <p>banana</p>
+                            <p>fruit</p>
+                            <p>hungry</p>
+                            <p>full</p>
+                            <p>thirsty</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="study-bg">
+                            <div class="txt">배운 표현</div>
+                            <div class="num">30</div>
+                            <div class="icon-num">6<i class="icon-arrowup"></i></div>
+                        </div>
+                        <!-- 문장리스트-->
+                        <div class="express-panel">
+                            <p>I’m hungry.</p>
+                            <p>I’m thirsty.</p>
+                            <p>I eat an apple.</p>
+                            <p>I eat a banana.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="sect-title">주간 학습 패턴</div>
+            <div class="round-box-wide">
+                <div class="sub-tit">요일별 총 학습시간</div>
+                <div class="chart-bar">
+                    <canvas id="weekBarChart"></canvas>
+                </div>
+
+                <div class="comt">
+                    김잉헌 학생은 이번주 하루 평균 3시간 학습을 하였습니다. 화요일은 하루 1시간으로 평소보다 짧게 학습하였습니다. 열심히 할 수 있도록 응원해 주세요.
+                </div>
+            </div>
+
+            <div class="round-box-wide">
+                <div class="sub-tit">요일별 접속 시각 패턴</div>
+                <div class="chart-line2">
+                    <canvas id="dayLineChart"></canvas>
+                </div>
+                <div class="comt">
+                    김잉헌 학생은 이번주 하루 평균 3시간 학습을 하였습니다. 화요일은 하루 1시간으로 평소보다 짧게 학습하였습니다. 열심히 할 수 있도록 응원해 주세요.
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--// CONTENTS -->
+
+</div><!--// WRAP -->
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<script src="./js/common.js"></script>
+
+</body>
+</html>
