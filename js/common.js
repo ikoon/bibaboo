@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 
     // 접고 펼치기
@@ -5,6 +7,13 @@ $(document).ready(function() {
       $(this).toggleClass("active");
       $(this).next().slideToggle(200);
     });
+
+    // UNIT 접고 펼치기
+    $('.badge-list .badge').on("click", function(){
+        $(this).toggleClass("on");
+        $(this).parent().parent().parent().parent().find('.chart-line-full').slideToggle(200);
+    }); 
+    
 
     // 도넛차트 :: 주간 달성률
     // round corners
@@ -162,7 +171,8 @@ $(document).ready(function() {
                 lineTension: 0,
                 radius: 2,
                 fontSize : 10, 
-                        fontStyle: '500',
+                    fontStyle: '500',
+                    
             }],
         },
         options: {
@@ -190,6 +200,7 @@ $(document).ready(function() {
                 xAxes : [ {
                     ticks : {
                         fontSize : 10, 
+                        fontStyle: '500',
                     },
                     gridLines: {
                         borderDash: [1, 3],
@@ -197,7 +208,6 @@ $(document).ready(function() {
                     }
                 }],
             },
-            pointLabels: { fontSize:18 }
         }
     });
 
@@ -213,23 +223,32 @@ $(document).ready(function() {
                 borderColor: "rgba(254, 195, 195, .7)",
                 pointBorderColor: "rgba(254, 195, 195, .7)",
                 pointBackgroundColor: "rgba(254, 195, 195, .7)",
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
                 pointRadius: 0,
                 fill: true,
             }]
         },
         options: {
+            responsive: false,
             legend: {display: false}, // datasets label  숨김
+            borderWidth:10,
             scale: {
                 reverse: false,
+                
                 ticks: {
                     display: false,
                     max:100,
                     min: 0,
                     stepSize: 20,
                     beginAtZero: true,
+                        fontColor: "#ff0000",
+                        backgroundColor: "#000000",
                 },
                 gridLines: {
                     color: ["#d2d5f6", "#d2d5f6", "#d2d5f6", "#d2d5f6", "#9a9dee"],
+                    // color: "#e9efff",
+                    // lineWidth:40,
                 },
                 angleLines: {
                     display: false,
@@ -254,7 +273,20 @@ $(document).ready(function() {
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.font = "14px 'Noto Sans KR'";
-                ctx.fillText('학습 정보가 없습니다.', width / 2 + 10, height / 2 - 20);
+                ctx.fillText('학습 정보가 없습니다.', width / 2 + 10, height / 2 - 10);
+                ctx.restore();
+            }
+            
+        },
+        beforeDraw: function (chart, easing) {
+            if (chart.config.options.chartArea && chart.config.options.chartArea.backgroundColor && chart.data.datasets.length === 0) {
+                var helpers = Chart.helpers;
+                var ctx = chart.chart.ctx;
+                var chartArea = chart.chartArea;
+
+                ctx.save();
+                ctx.fillStyle = chart.config.options.chartArea.backgroundColor;
+                ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, chartArea.bottom - chartArea.top);
                 ctx.restore();
             }
         }
@@ -263,6 +295,9 @@ $(document).ready(function() {
     // 라인차트 :: 평균 집중도 그래프 옵션
     var lineFullOptions = {
         legend: {display: false}, // datasets label  숨김
+        chartArea: {
+            backgroundColor: '#f2f2f2'
+        },
         scales: {
             yAxes : [ {
                 ticks : {
@@ -290,16 +325,44 @@ $(document).ready(function() {
         data: {
             labels: ["", "", "", "", ""],
             datasets: [{
-                data: [0, 3, 5, 4, 0],
+                data: [0, 3, null, null, null],
                 pointBackgroundColor: "#6076ff",
                 borderColor: "#6076ff",
-                backgroundColor: "rgba(205,209,230,0.3)",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
                 borderWidth: 1,
                 fill: true,
                 lineTension: 0,
                 radius: 2
-            }]
-        },
+            }, {
+                data: [null, 3, 5, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 5, 4, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 4, 0],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }
+        ] },
         options: lineFullOptions,
     });
 
@@ -310,10 +373,38 @@ $(document).ready(function() {
         data: {
             labels: ["", "", "", "", ""],
             datasets: [{
-                data: [3, 1, 2, 4, 2],
+                data: [3, 1, null, null, null],
                 pointBackgroundColor: "#6076ff",
                 borderColor: "#6076ff",
-                backgroundColor: "rgba(205,209,230,0.3)",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 1, 2, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 2, 4, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 4, 2],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
                 borderWidth: 1,
                 fill: true,
                 lineTension: 0,
@@ -333,6 +424,113 @@ $(document).ready(function() {
         },
         options: lineFullOptions,
     });
+
+    // 막대차트 :: 요일별 총 학습시간 막대 라운딩
+    Chart.elements.Rectangle.prototype.draw = function() {
+        var ctx = this._chart.ctx;
+        var vm = this._view;
+        var left, right, top, bottom, signX, signY, borderSkipped, radius;
+        var borderWidth = vm.borderWidth;
+        var cornerRadius = 20;
+    
+        if (!vm.horizontal) {
+            left = vm.x - vm.width / 2;
+            right = vm.x + vm.width / 2;
+            top = vm.y;
+            bottom = vm.base;
+            signX = 1;
+            signY = bottom > top? 1: -1;
+            borderSkipped = vm.borderSkipped || 'bottom';
+        } else {
+            left = vm.base;
+            right = vm.x;
+            top = vm.y - vm.height / 2;
+            bottom = vm.y + vm.height / 2;
+            signX = right > left? 1: -1;
+            signY = 1;
+            borderSkipped = vm.borderSkipped || 'left';
+        }
+    
+        if (borderWidth) {
+            var barSize = Math.min(Math.abs(left - right), Math.abs(top - bottom));
+            borderWidth = borderWidth > barSize? barSize: borderWidth;
+            var halfStroke = borderWidth / 2;
+            var borderLeft = left + (borderSkipped !== 'left'? halfStroke * signX: 0);
+            var borderRight = right + (borderSkipped !== 'right'? -halfStroke * signX: 0);
+            var borderTop = top + (borderSkipped !== 'top'? halfStroke * signY: 0);
+            var borderBottom = bottom + (borderSkipped !== 'bottom'? -halfStroke * signY: 0);
+            if (borderLeft !== borderRight) {
+                top = borderTop;
+                bottom = borderBottom;
+            }
+            if (borderTop !== borderBottom) {
+                left = borderLeft;
+                right = borderRight;
+            }
+        }
+    
+        ctx.beginPath();
+        ctx.fillStyle = vm.backgroundColor;
+        ctx.strokeStyle = vm.borderColor;
+        ctx.lineWidth = borderWidth;
+        var corners = [
+            [left, bottom],
+            [left, top],
+            [right, top],
+            [right, bottom]
+        ];
+    
+        var borders = ['bottom', 'left', 'top', 'right'];
+        var startCorner = borders.indexOf(borderSkipped, 0);
+        if (startCorner === -1) {
+            startCorner = 0;
+        }
+    
+        function cornerAt(index) {
+            return corners[(startCorner + index) % 4];
+        }
+    
+        var corner = cornerAt(0);
+        ctx.moveTo(corner[0], corner[1]);
+    
+        for (var i = 1; i < 4; i++) {
+            corner = cornerAt(i);
+            nextCornerId = i+1;
+            if(nextCornerId == 4){
+                nextCornerId = 0
+            }
+    
+            nextCorner = cornerAt(nextCornerId);
+    
+            width = corners[2][0] - corners[1][0];
+            height = corners[0][1] - corners[1][1];
+            x = corners[1][0];
+            y = corners[1][1];
+            
+            var radius = cornerRadius;
+            
+            if(radius > height/2){
+                radius = height/2;
+            }if(radius > width/2){
+                radius = width/2;
+            }
+    
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+        }
+    
+        ctx.fill();
+        if (borderWidth) {
+            ctx.stroke();
+        }
+    };
 
     // 막대차트 :: 요일별 총 학습시간
     var ctx7 = document.getElementById("weekBarChart").getContext("2d");
@@ -391,7 +589,6 @@ $(document).ready(function() {
                         // max: 21, // 최대치 값
                         stepSize: 2,
                         fontSize : 12, 
-                        
                     },
                     gridLines: {
                         lineWidth: 0,  // y축 격자선 없애기

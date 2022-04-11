@@ -1,6 +1,6 @@
 @charset "utf-8"; 
 
-@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url('https://webfontworld.github.io/naver/NanumSquareRound.css');
 @font-face { font-family: 'yg-jalnan'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff'); font-weight: normal; font-style: normal; }
 
@@ -31,10 +31,9 @@ a:visited {color: #333;}
 header, section, nav, article, footer { display: block; text-align:left;}
 *:focus {outline:none;}
 * {-webkit-tap-highlight-color:rgba(0,0,0,0);}
-body {
-    
-}
+
 .wrap {
+    min-width: 360px;
     max-width: 720px;
     margin: 0 auto;
 }
@@ -107,6 +106,8 @@ body {
 .badge-list .badge-blue span {background-color: #4f67ff;}
 .badge-list .badge-gray {background-color: #989696; color: #565656}
 .badge-list .badge-gray span {background-color: #e5e5e5;}
+.badge-list .badge-gray.on {background-color: #1931c2;}
+.badge-list .badge-gray.on span {background-color: #4f67ff; color: #fff;}
 
 /* CONTAINER  ******************/
 .body-container {
@@ -162,7 +163,18 @@ body {
     padding-right: 20px;
 }
 .round-box-wide .chart-line2 {
+    position: relative;
     padding: 15px 35px 20px;
+}
+.round-box-wide .chart-line2:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 63px;
+    bottom: 20px;
+    width: 2px;
+    background: #fff;
 }
 
 .weekly-box-wide  {
@@ -206,6 +218,17 @@ body {
 .weekly-box-wide .chart-line-box .ps-num li:nth-child(4) {background:blue;} */
 .weekly-box-wide .chart-line-box .chart-line {
     margin-top: -30px;
+    position: relative;
+}
+.weekly-box-wide .chart-line-box .chart-line:before {
+    content:'';
+    display:block;
+    position: absolute;
+    top: 74px;
+    left: 21px;
+    width: 12px;
+    height: 100px;
+    background:#fff;
 }
 .box-top .badge-list {
     margin-top: 11px;
@@ -370,6 +393,7 @@ body {
 
 /* 발음평가 종합그래프 */
 .index-box {
+    padding-top: 20px;
     text-align: center;
 }
 .index-box .txt span {
@@ -517,15 +541,68 @@ body {
     border-bottom-right-radius: 15px;
 }
 .chart-bar {
+    position: relative;
     padding: 30px 35px 20px;
+}
+.chart-bar:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 54px;
+    bottom: 20px;
+    width: 12px;
+    background: #fff;
 }
 .chart-line2 {
     padding: 0 20px;
 }
 .chart-radar {
-    padding: 10px 50px 20px;
+    position: relative;
+    padding: 10px 0 0;
+    /* width: 54px;
+    box-sizing: content-box;
+    border-width: 50px 18px 0;
+    border-style: solid; */
+    border-color: pink transparent;
+}
+/* .chart-radar:before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -85px;
+    left: -18px;
+    border-width: 0 45px 35px;
+    border-style: solid;
+    border-color: transparent transparent pink;
+  } */
+  /* #radarChart {
+    background-image: url('../images/box_graph_02@2x.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+
+  } */
+  #radarChart {position: relative; z-index:2; margin: 0 auto;}
+  .chart-radar:before {
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 100%;
+    height: calc(100% - 12px); ;
+    background-image: url('../images/box_graph_01@2x.png');
+    background-repeat: no-repeat;
+    background-position: center 4px;
+    background-size:contain;
+    z-index:1;
+    /* background-size:46.923vw; */
 }
 .chart-line-full {
+    display: none;
     margin-top: 20px;
     padding: 0 30px;
 }

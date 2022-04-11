@@ -212,13 +212,13 @@
             </div>
         </section>
 
-        <section>
+        <section id="avgSect"> <!-- js사용 id값-->
             <div class="sect-title">평균 집중도 그래프</div>
             <div class="round-box-wide">
                 <div class="box-top">
                     <div class="con-tit">Phonics Time</div>
                     <ul class="badge-list">
-                        <li><div class="badge badge-blue"><span>Unit 140</span></div></li> <!-- 컬러 class : badge-blue, badge-gray -->
+                        <li><div class="badge badge-gray on"><span>Unit 140</span></div></li> <!-- active class : on추가 -->
                         <li><div class="badge badge-gray"><span>Unit 14</span></div></li>
                         <li><div class="badge badge-gray"><span>Unit 140</span></div></li>
                     </ul> 
@@ -229,7 +229,7 @@
                 </div>
 
                 <!-- chart -->
-                <div class="chart-line-full">
+                <div class="chart-line-full" style="display:block">
                     <canvas id="lineFullChart"></canvas>
                 </div>
             </div>
@@ -238,22 +238,7 @@
                 <div class="box-top">
                     <div class="con-tit">Phonics Time</div>
                     <ul class="badge-list">
-                        <li><div class="badge badge-blue"><span>Unit 140</span></div></li> <!-- 컬러 class : badge-blue, badge-gray -->
-                        <li><div class="badge badge-gray"><span>Unit 14</span></div></li>
-                        <li><div class="badge badge-gray"><span>Unit 140</span></div></li>
-                    </ul> 
-                </div>
-                <div class="per-box">
-                    <span class="per">100%</span>
-                    <span class="txt">시간가는줄 모르게 재미있었어요.</span>
-                </div>
-            </div>
-
-            <div class="round-box-wide">
-                <div class="box-top">
-                    <div class="con-tit">Phonics Time</div>
-                    <ul class="badge-list">
-                        <li><div class="badge badge-blue"><span>Unit 140</span></div></li> <!-- 컬러 class : badge-blue, badge-gray -->
+                        <li><div class="badge badge-gray"><span>Unit 140</span></div></li> <!-- active class : on추가 -->
                         <li><div class="badge badge-gray"><span>Unit 14</span></div></li>
                         <li><div class="badge badge-gray"><span>Unit 140</span></div></li>
                     </ul> 
@@ -271,7 +256,7 @@
                 <div class="box-top">
                     <div class="con-tit">Phonics Time</div>
                     <ul class="badge-list">
-                        <li><div class="badge badge-blue"><span>Unit 140</span></div></li> <!-- 컬러 class : badge-blue, badge-gray -->
+                        <li><div class="badge badge-gray on"><span>Unit 140</span></div></li> <!-- active class : on추가 -->
                         <li><div class="badge badge-gray"><span>Unit 14</span></div></li>
                         <li><div class="badge badge-gray"><span>Unit 140</span></div></li>
                     </ul> 
@@ -280,7 +265,7 @@
                     <span class="per">100%</span>
                     <span class="txt">시간가는줄 모르게 재미있었어요.</span>
                 </div>
-                <div class="chart-line-full">
+                <div class="chart-line-full" style="display:block">
                     <canvas id="lineFullChart3"></canvas>
                 </div>
             </div>
@@ -373,7 +358,9 @@
 
 <!-- JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.js"></script> -->
 <script src="./js/common.js"></script>
 
 </body>
