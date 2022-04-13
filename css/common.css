@@ -162,6 +162,15 @@ header, section, nav, article, footer { display: block; text-align:left;}
     justify-content: space-between;
     padding-right: 20px;
 }
+.round-box-wide .box-body {
+    min-height: 229px;
+}
+.tab-box {
+    display: none;
+}
+.tab-box.active {
+    display: block;
+}
 .round-box-wide .chart-line2 {
     position: relative;
     padding: 15px 35px 20px;
@@ -225,7 +234,7 @@ header, section, nav, article, footer { display: block; text-align:left;}
     display:block;
     position: absolute;
     top: 74px;
-    left: 21px;
+    left: 22px;
     width: 12px;
     height: 100px;
     background:#fff;
@@ -549,7 +558,7 @@ header, section, nav, article, footer { display: block; text-align:left;}
     display: block;
     position: absolute;
     top: 20px;
-    left: 54px;
+    left: 56px;
     bottom: 20px;
     width: 12px;
     background: #fff;
@@ -602,7 +611,6 @@ header, section, nav, article, footer { display: block; text-align:left;}
     /* background-size:46.923vw; */
 }
 .chart-line-full {
-    display: none;
     margin-top: 20px;
     padding: 0 30px;
 }

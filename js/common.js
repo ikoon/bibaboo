@@ -8,11 +8,7 @@ $(document).ready(function() {
       $(this).next().slideToggle(200);
     });
 
-    // UNIT 접고 펼치기
-    $('.badge-list .badge').on("click", function(){
-        $(this).toggleClass("on");
-        $(this).parent().parent().parent().parent().find('.chart-line-full').slideToggle(200);
-    }); 
+    
     
 
     // 도넛차트 :: 주간 달성률
@@ -171,8 +167,8 @@ $(document).ready(function() {
                 lineTension: 0,
                 radius: 2,
                 fontSize : 10, 
-                    fontStyle: '500',
-                    
+                fontStyle: '700',
+                fontFamily: 'Noto Sans KR',   
             }],
         },
         options: {
@@ -184,7 +180,7 @@ $(document).ready(function() {
                 text: '지난 4주간 달성률 비교',
                 fontSize: 12,
                 fontColor: 'rgba(99, 120, 255, 1)',
-                fontStyle: 'bold',
+                fontStyle: '700',
                 padding: 30
             },
             scales: {
@@ -194,13 +190,15 @@ $(document).ready(function() {
                         // max: 21, // 최대치 값
                         stepSize: 50,
                         fontSize : 10, 
-                        fontStyle: '500', 
+                        fontStyle: '700', 
+                        fontFamily: 'Noto Sans KR',
                     },
                 }],
                 xAxes : [ {
                     ticks : {
                         fontSize : 10, 
-                        fontStyle: '500',
+                        fontStyle: '700',
+                        fontFamily: 'Noto Sans KR',
                     },
                     gridLines: {
                         borderDash: [1, 3],
@@ -304,7 +302,10 @@ $(document).ready(function() {
                     beginAtZero : true, // 0부터 시작
                     max: 5, // 최대치 값
                     stepSize: 1,
+                    fontStyle: '700',
                     fontSize : 12, 
+                    fontFamily: 'Noto Sans KR', 
+                    align: 'center',
                 },
                 gridLines: {
                     lineWidth: 0,  // y축 격자선 없애기
@@ -318,8 +319,18 @@ $(document).ready(function() {
             }],
         }
     }
-    // 라인차트 :: 평균 집중도 그래프 1
-    var ctx4 = document.getElementById("lineFullChart")
+
+    var ctx4 = document.getElementById("lineFullChart");
+    var ctx42 = document.getElementById("lineFullChart1b");
+    var ctx43 = document.getElementById("lineFullChart1c");
+    var ctx5 = document.getElementById("lineFullChart2");
+    var ctx52 = document.getElementById("lineFullChart2b");
+    var ctx53 = document.getElementById("lineFullChart2c");
+    var ctx6 = document.getElementById('lineFullChart3');
+    var ctx62 = document.getElementById("lineFullChart3b");
+    var ctx63 = document.getElementById('lineFullChart3c');
+
+    // 라인차트 :: 평균 집중도 그래프 1-1
     var lineFullChart = new Chart(ctx4, {
         type: "line",
         data: {
@@ -366,8 +377,101 @@ $(document).ready(function() {
         options: lineFullOptions,
     });
 
+    // 라인차트 :: 평균 집중도 그래프 1-2
+    var lineFullChart1_2 = new Chart(ctx42, {
+        type: "line",
+        data: {
+            labels: ["", "", "", "", ""],
+            datasets: [{
+                data: [0, 3, null, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 3, 5, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 5, 2, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 2, 4],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }
+        ] },
+        options: lineFullOptions,
+    });
+
+    // 라인차트 :: 평균 집중도 그래프 1-3
+    var lineFullChart1_3 = new Chart(ctx43, {
+        type: "line",
+        data: {
+            labels: ["", "", "", "", ""],
+            datasets: [{
+                data: [0, 3, null, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 3, 4, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 4, 2, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 2, 0],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }
+        ] },
+        options: lineFullOptions,
+    });
+
     // 라인차트 :: 평균 집중도 그래프 2
-    var ctx5 = document.getElementById("lineFullChart2")
     var lineFullChart2 = new Chart(ctx5, {
         type: "line",
         data: {
@@ -414,14 +518,201 @@ $(document).ready(function() {
         options: lineFullOptions,
     });
 
+    // 라인차트 :: 평균 집중도 그래프 2-2
+    var lineFullChart2b = new Chart(ctx52, {
+        type: "line",
+        data: {
+            labels: ["", "", "", "", ""],
+            datasets: [{
+                data: [0, 3, null, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 3, 5, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 5, 4, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 4, 0],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }
+        ] },
+        options: lineFullOptions,
+    });
+
+    // 라인차트 :: 평균 집중도 그래프 2-3
+    var lineFullChart2c = new Chart(ctx53, {
+        type: "line",
+        data: {
+            labels: ["", "", "", "", ""],
+            datasets: [{
+                data: [0, 4, null, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 4, 5, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 5, 4, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 4, 0],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }
+        ] },
+        options: lineFullOptions,
+    });
+
     // 라인차트 :: 평균 집중도 그래프 3
-    var ctx6 = document.getElementById('lineFullChart3').getContext('2d');
     var lineFullChart3 = new Chart(ctx6, {
         type: 'line',
         data: {
             labels: ["", "", "", "", ""],
             datasets: []
         },
+        options: lineFullOptions,
+    });
+
+    // 라인차트 :: 평균 집중도 그래프 3-2
+    var lineFullChart3b = new Chart(ctx62, {
+        type: "line",
+        data: {
+            labels: ["", "", "", "", ""],
+            datasets: [{
+                data: [0, 4, null, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 4, 5, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 5, 4, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 4, 0],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }
+        ] },
+        options: lineFullOptions,
+    });
+
+    // 라인차트 :: 평균 집중도 그래프 3-3
+    var lineFullChart3c = new Chart(ctx63, {
+        type: 'line',
+        data: {
+            labels: ["", "", "", "", ""],
+            datasets: [{
+                data: [0, 3, null, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 3, 5, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 5, 4, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 4, 0],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }
+        ] },
         options: lineFullOptions,
     });
 
@@ -552,12 +843,20 @@ $(document).ready(function() {
                     ticks : {
                         beginAtZero : true, // 0부터 시작
                         stepSize: 10 ,
+                        fontStyle: '700',
                         fontSize : 12, 
+                        fontFamily: 'Noto Sans KR',  
+                        labelTextAlign: "center"
                     },
                 }],
                 xAxes : [ {
+                    ticks : {
+                        fontStyle: '700',
+                        fontSize : 12, 
+                        fontFamily: 'Noto Sans KR', 
+                    },
                     gridLines: {
-                        lineWidth: 0  // x축 격자선 없애기
+                        lineWidth: 0,  // x축 격자선 없애기
                     }
                 }],
             }
@@ -588,13 +887,20 @@ $(document).ready(function() {
                         // beginAtZero : true, // 0부터 시작
                         // max: 21, // 최대치 값
                         stepSize: 2,
+                        fontStyle: '700',
                         fontSize : 12, 
+                        fontFamily: 'Noto Sans KR', 
                     },
                     gridLines: {
                         lineWidth: 0,  // y축 격자선 없애기
                     }
                 }],
                 xAxes : [ {
+                    ticks : {
+                        fontStyle: '700',
+                        fontSize : 12, 
+                        fontFamily: 'Noto Sans KR', 
+                    },
                     gridLines: {
                         borderDash: [0, 300],
                         color: '#c7c7c7',
@@ -603,4 +909,16 @@ $(document).ready(function() {
             }
         }
     });
+
+    // UNIT TAB
+    $('.badge-list .badge').on('click', function() {
+        var tab_id = $(this).attr('data-tab');
+
+        $(this).parent().siblings().find('.badge').removeClass('on');
+        $(this).parent().parent().parent().next().find('.tab-box').removeClass('active');
+        
+        $(this).addClass('on');
+        $("#" + tab_id).addClass('active', '1000', 'easeout');
+    });
+
 });
