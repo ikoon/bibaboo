@@ -172,7 +172,7 @@ header, section, nav, article, footer { display: block; text-align:left;}
     transition: max-height 0.3s ease-out;
 }
 .round-box-wide.expand.on {
-    max-height: 334px;
+    max-height: 500px;
     transition: max-height 0.3s ease-out;
 }
 .tab-box {
