@@ -1,15 +1,15 @@
-
-
 $(document).ready(function() {
-
     // 접고 펼치기
     $(".accordion").on("click", function() {
-      $(this).toggleClass("active");
-      $(this).next().slideToggle(200);
+        $(this).toggleClass("active");
+        $(this).next().slideToggle(200);
     });
-
     
-    
+    // 접고 펼치기 (평균 집중도 그래프)
+    $(".btn-avg").on("click", function() {
+        $(this).toggleClass("on");
+        $(this).parent().parent().toggleClass('on');
+    });
 
     // 도넛차트 :: 주간 달성률
     // round corners
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 				ctx.save();
 				ctx.translate(arc.round.x, arc.round.y);
-				console.log(arc.round.startAngle)
+				// console.log(arc.round.startAngle)
 				ctx.fillStyle = arc.round.backgroundColor;
 				ctx.beginPath();
 				ctx.arc(arc.round.radius * Math.sin(startAngle), arc.round.radius * Math.cos(startAngle), arc.round.thickness, 0, 2 * Math.PI);
@@ -915,10 +915,10 @@ $(document).ready(function() {
         var tab_id = $(this).attr('data-tab');
 
         $(this).parent().siblings().find('.badge').removeClass('on');
-        $(this).parent().parent().parent().next().find('.tab-box').removeClass('active');
+        $(this).parent().parent().parent().find('.tab-box').removeClass('active');
         
         $(this).addClass('on');
-        $("#" + tab_id).addClass('active', '1000', 'easeout');
+        $("#" + tab_id).addClass('active');
     });
 
 });

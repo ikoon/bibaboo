@@ -163,7 +163,17 @@ header, section, nav, article, footer { display: block; text-align:left;}
     padding-right: 20px;
 }
 .round-box-wide .box-body {
-    min-height: 229px;
+    min-height: 136px;
+}
+.round-box-wide.expand {
+    padding-bottom: 0;
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.round-box-wide.expand.on {
+    max-height: 334px;
+    transition: max-height 0.3s ease-out;
 }
 .tab-box {
     display: none;
@@ -259,6 +269,61 @@ header, section, nav, article, footer { display: block; text-align:left;}
     line-height: 15px;
     font-size: 12px;
 }
+.box-body .badge-list {
+    justify-content: flex-end;
+    margin-top: 0;
+    margin-right: 20px;
+}
+.box-body .badge-list li {
+    margin-right: 8px;
+}
+.box-body .badge-list li:last-child {
+    margin-right: 0;
+}
+.box-body .badge-list .badge {
+    min-width: 58px;
+    height: 17px;
+}
+.box-body .badge-list .badge span {
+    min-width: 58px;
+    height: 15px;
+    padding: 0 3px;
+    line-height: 15px;
+    font-size: 12px;
+}
+.btn-avg {
+    position: relative;
+    display: inline-block;
+    min-width: 88px;
+    height: 17px;
+    border-radius: 11px;
+    color: #fff;
+    text-align: center;
+    background-color: #989696;
+    color: #565656;
+    border: 0;
+    padding: 0;
+}
+.btn-avg span {
+    display: block;
+    min-width: 88px;
+    height: 15px;
+    margin-top: -2px;
+    padding: 0 3px;
+    line-height: 16px;
+    font-size: 12px;
+    border-radius: 11px;
+    background-color: #e5e5e5;
+}
+.btn-avg.on  {
+    background-color: #1931c2;
+}
+.btn-avg.on span {
+    background-color: #4f67ff;
+    color: #fff;
+}
+
+
 
 
 .summary-list {
@@ -432,7 +497,7 @@ header, section, nav, article, footer { display: block; text-align:left;}
 .per-box {
     display: flex;
     align-items: center;
-    padding: 20px 20px 0;
+    padding: 0 20px 0;
 }
 .per-box .per {
     flex-basis: 90px;

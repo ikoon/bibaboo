@@ -214,17 +214,19 @@
 
         <section id="avgSect"> <!-- js사용 id값-->
             <div class="sect-title">평균 집중도 그래프</div>
-            <div class="round-box-wide">
+            <div class="round-box-wide expand on"> <!-- 내용 전부 펼치기 class : on 추가 -->
                 <div class="box-top">
                     <div class="con-tit">Phonics Time</div>
+                    <button class="btn-avg"><span>주간평균</span></button> <!-- 파랑버튼 class : on -->
+                </div>
+
+                <div class="box-body">
+                    <!-- tab button -->
                     <ul class="badge-list">
                         <li><div class="badge badge-gray on" data-tab="tab1_1"><span>Unit 140</span></div></li> <!-- active class : on추가 -->
                         <li><div class="badge badge-gray" data-tab="tab1_2"><span>Unit 14</span></div></li>
                         <li><div class="badge badge-gray" data-tab="tab1_3"><span>Unit 140</span></div></li>
                     </ul> 
-                </div>
-
-                <div class="box-body">
                     <!-- tab box1-1 -->
                     <div class="tab-box active" id="tab1_1">
                         <div class="per-box">
@@ -232,7 +234,7 @@
                             <span class="txt">시간가는줄 모르게 재미있었어요.</span>
                         </div>
                         <!-- chart -->
-                        <div class="chart-line-full" style="display:block">
+                        <div class="chart-line-full">
                             <canvas id="lineFullChart"></canvas>
                         </div>
                     </div>
@@ -240,11 +242,11 @@
                     <!-- tab box1-2 -->
                     <div class="tab-box" id="tab1_2">
                         <div class="per-box">
-                            <span class="per">100%</span>
-                            <span class="txt">시간가는줄 모르게 재미있었어요.</span>
+                            <span class="per">90%</span>
+                            <span class="txt">2시간가는줄 모르게 재미있었어요.</span>
                         </div>
                         <!-- chart -->
-                        <div class="chart-line-full" style="display:block">
+                        <div class="chart-line-full">
                             <canvas id="lineFullChart1b"></canvas>
                         </div>
                     </div>
@@ -252,32 +254,35 @@
                     <!-- tab box1-3 -->
                     <div class="tab-box" id="tab1_3">
                         <div class="per-box">
-                            <span class="per">100%</span>
-                            <span class="txt">시간가는줄 모르게 재미있었어요.</span>
+                            <span class="per">80%</span>
+                            <span class="txt">3시간가는줄 모르게 재미있었어요.</span>
                         </div>
                         <!-- chart -->
-                        <div class="chart-line-full" style="display:block">
+                        <div class="chart-line-full">
                             <canvas id="lineFullChart1c"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="round-box-wide">
+            <div class="round-box-wide expand on">
                 <div class="box-top">
                     <div class="con-tit">Phonics Time</div>
+                    <button class="btn-avg"><span>주간평균</span></button> <!-- 파랑버튼 class : on -->
+                </div>
+
+                <div class="box-body">
+                    <!-- tab button -->
                     <ul class="badge-list">
                         <li><div class="badge badge-gray on" data-tab="tab2_1"><span>Unit 140</span></div></li> <!-- active class : on추가 -->
                         <li><div class="badge badge-gray" data-tab="tab2_2"><span>Unit 14</span></div></li>
                         <li><div class="badge badge-gray" data-tab="tab2_3"><span>Unit 140</span></div></li>
                     </ul> 
-                </div>
 
-                <div class="box-body">
                     <!-- tab box2-1 -->
                     <div class="tab-box active" id="tab2_1">
                         <div class="per-box">
-                            <span class="per">100%</span>
+                            <span class="per">96%</span>
                             <span class="txt">시간가는줄 모르게 재미있었어요.</span>
                         </div>
                         <div class="chart-line-full" style="display:block">
@@ -299,7 +304,7 @@
                     <!-- tab box2-3 -->
                     <div class="tab-box" id="tab2_3">
                         <div class="per-box">
-                            <span class="per">100%</span>
+                            <span class="per">89%</span>
                             <span class="txt">시간가는줄 모르게 재미있었어요.</span>
                         </div>
                         <div class="chart-line-full">
@@ -309,21 +314,23 @@
                 </div>
             </div>
 
-            <div class="round-box-wide">
+            <div class="round-box-wide expand on">
                 <div class="box-top">
                     <div class="con-tit">Phonics Time</div>
+                    <button class="btn-avg"><span>주간평균</span></button> <!-- 파랑버튼 class : on -->
+                </div>
+
+                <div class="box-body">
+                    <!-- tab button -->
                     <ul class="badge-list">
                         <li><div class="badge badge-gray on" data-tab="tab3_1"><span>Unit 140</span></div></li> <!-- active class : on추가 -->
                         <li><div class="badge badge-gray" data-tab="tab3_2"><span>Unit 14</span></div></li>
                         <li><div class="badge badge-gray" data-tab="tab3_3"><span>Unit 140</span></div></li>
                     </ul> 
-                </div>
-
-                <div class="box-body">
                     <!-- tab box3-1 -->
                     <div class="tab-box active" id="tab3_1">
                         <div class="per-box">
-                            <span class="per">100%</span>
+                            <span class="per">99%</span>
                             <span class="txt">시간가는줄 모르게 재미있었어요.</span>
                         </div>
                         <div class="chart-line-full" style="display:block">
@@ -334,7 +341,7 @@
                     <!-- tab box3-2 -->
                     <div class="tab-box" id="tab3_2">
                         <div class="per-box">
-                            <span class="per">100%</span>
+                            <span class="per">80%</span>
                             <span class="txt">시간가는줄 모르게 재미있었어요.</span>
                         </div>
                         <div class="chart-line-full" style="display:block">
@@ -345,7 +352,7 @@
                     <!-- tab box3-3 -->
                     <div class="tab-box" id="tab3_3">
                         <div class="per-box">
-                            <span class="per">100%</span>
+                            <span class="per">93%</span>
                             <span class="txt">시간가는줄 모르게 재미있었어요.</span>
                         </div>
                         <div class="chart-line-full" style="display:block">
