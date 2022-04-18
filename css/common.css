@@ -143,6 +143,7 @@ header, section, nav, article, footer { display: block; text-align:left;}
     font-size: 16px;
 }
 .round-box-wide {
+    position: relative;
     padding-bottom: 18px;
     margin-bottom: 14px;
     border: 1px solid #E5E5E5;
@@ -177,9 +178,12 @@ header, section, nav, article, footer { display: block; text-align:left;}
 }
 .tab-box {
     display: none;
+    /* transition: 0.2s all;
+    opacity: 0; */
 }
 .tab-box.active {
-    display: block;
+    display: inherit;
+    /* opacity: 1 */
 }
 .round-box-wide .chart-line2 {
     position: relative;
@@ -271,11 +275,15 @@ header, section, nav, article, footer { display: block; text-align:left;}
 }
 .box-body .badge-list {
     justify-content: flex-end;
-    margin-top: 0;
-    margin-right: 20px;
+    margin: 4px 20px 5px 0;
 }
 .box-body .badge-list li {
     margin-right: 8px;
+}
+.box-body .badge-list li.avg-box {
+    position: absolute;
+    top: 10px;
+    right: 12px;
 }
 .box-body .badge-list li:last-child {
     margin-right: 0;
@@ -284,6 +292,8 @@ header, section, nav, article, footer { display: block; text-align:left;}
     min-width: 58px;
     height: 17px;
 }
+.box-body .badge-list .badge.btn-avg,
+.box-body .badge-list .badge.btn-avg span {min-width: 88px;}
 .box-body .badge-list .badge span {
     min-width: 58px;
     height: 15px;
@@ -291,7 +301,8 @@ header, section, nav, article, footer { display: block; text-align:left;}
     line-height: 15px;
     font-size: 12px;
 }
-.btn-avg {
+
+/* .btn-avg {
     position: relative;
     display: inline-block;
     min-width: 88px;
@@ -314,7 +325,7 @@ header, section, nav, article, footer { display: block; text-align:left;}
     font-size: 12px;
     border-radius: 11px;
     background-color: #e5e5e5;
-}
+} */
 .btn-avg.on  {
     background-color: #1931c2;
 }
@@ -678,4 +689,8 @@ header, section, nav, article, footer { display: block; text-align:left;}
 .chart-line-full {
     margin-top: 20px;
     padding: 0 30px;
+}
+#avgSect .round-box-wide {
+    min-height: 246px;
+    padding-bottom: 0;
 }

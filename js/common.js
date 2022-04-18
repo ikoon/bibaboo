@@ -5,12 +5,6 @@ $(document).ready(function() {
         $(this).next().slideToggle(200);
     });
     
-    // 접고 펼치기 (평균 집중도 그래프)
-    $(".btn-avg").on("click", function() {
-        $(this).toggleClass("on");
-        $(this).parent().parent().toggleClass('on');
-    });
-
     // 도넛차트 :: 주간 달성률
     // round corners
 	Chart.pluginService.register({
@@ -317,18 +311,69 @@ $(document).ready(function() {
                     color: '#c7c7c7',
                 }
             }],
-        }
+        },
+       
     }
 
+    var ctx4avg = document.getElementById("lineFullChartAvg");
     var ctx4 = document.getElementById("lineFullChart");
     var ctx42 = document.getElementById("lineFullChart1b");
     var ctx43 = document.getElementById("lineFullChart1c");
+    var ctx5avg = document.getElementById("lineFullChart2Avg");
     var ctx5 = document.getElementById("lineFullChart2");
     var ctx52 = document.getElementById("lineFullChart2b");
     var ctx53 = document.getElementById("lineFullChart2c");
+    var ctx6avg = document.getElementById('lineFullChart3Avg');
     var ctx6 = document.getElementById('lineFullChart3');
     var ctx62 = document.getElementById("lineFullChart3b");
     var ctx63 = document.getElementById('lineFullChart3c');
+
+    // 라인차트 :: 평균 집중도 그래프 1-0 주간평균
+    var lineFullChartAvg = new Chart(ctx4avg, {
+        type: "line",
+        data: {
+            labels: ["", "", "", "", ""],
+            datasets: [{
+                data: [0, 1, null, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 1, 5, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 5, 4, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 4, 0],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }
+        ] },
+        options: lineFullOptions,
+    });
 
     // 라인차트 :: 평균 집중도 그래프 1-1
     var lineFullChart = new Chart(ctx4, {
@@ -468,6 +513,53 @@ $(document).ready(function() {
                 radius: 2
             }
         ] },
+        options: lineFullOptions,
+    });
+
+     // 라인차트 :: 평균 집중도 그래프 2 주간평균
+     var lineFullChart2Avg = new Chart(ctx5avg, {
+        type: "line",
+        data: {
+            labels: ["", "", "", "", ""],
+            datasets: [{
+                data: [3, 1, null, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 1, 2, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 2, 4, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 4, 2],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }]
+        },
         options: lineFullOptions,
     });
 
@@ -612,6 +704,53 @@ $(document).ready(function() {
         options: lineFullOptions,
     });
 
+    // 라인차트 :: 평균 집중도 그래프 3 주간평균
+    var lineFullChart3Avg = new Chart(ctx6avg, {
+        type: "line",
+        data: {
+            labels: ["", "", "", "", ""],
+            datasets: [{
+                data: [2, 4, null, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }, {
+                data: [null, 4, 5, null, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },{
+                data: [null, null, 5, 4, null],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(204,214,255,0.2)", // 색상 1
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            },
+            {
+                data: [null, null, null, 4, 0],
+                pointBackgroundColor: "#6076ff",
+                borderColor: "#6076ff",
+                backgroundColor: "rgba(174,182,225,0.6)", // 색상 2
+                borderWidth: 1,
+                fill: true,
+                lineTension: 0,
+                radius: 2
+            }
+        ] },
+        options: lineFullOptions,
+    });
+    
     // 라인차트 :: 평균 집중도 그래프 3
     var lineFullChart3 = new Chart(ctx6, {
         type: 'line',
@@ -915,10 +1054,12 @@ $(document).ready(function() {
         var tab_id = $(this).attr('data-tab');
 
         $(this).parent().siblings().find('.badge').removeClass('on');
+        $(this).parent().parent().parent().find('.tab-box.active').hide(); 
         $(this).parent().parent().parent().find('.tab-box').removeClass('active');
         
         $(this).addClass('on');
-        $("#" + tab_id).addClass('active');
+        $("#" + tab_id).fadeIn(500).addClass('active'); 
+        e.preventDefault();
     });
 
 });
